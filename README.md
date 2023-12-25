@@ -10,3 +10,7 @@
 - 타입별 기본값
 - 타입 변환
 - 변수 범위
+
+# stdio
+- fmt.Println
+- fmt.Scanln
