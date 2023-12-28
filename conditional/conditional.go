@@ -13,6 +13,7 @@ func main() {
 		}
 		OddEvenCheckerUsingIf(n)
 		OddEvenCheckerUsingSwitch(n)
+		fmt.Println(colorToString(Yellow))
 	}
 }
 
@@ -27,15 +28,45 @@ func OddEvenCheckerUsingIf(n int) {
 }
 
 func OddEvenCheckerUsingSwitch(n int) {
-	var c = n % 2
 	/*
 		case문에 여러 값 사용 가능
 		조건문도 사용 가능
 	*/
-	switch c {
+	switch c := n % 2; c {
 	case 0:
 		fmt.Println("This is even number", n)
+		// break // break를 사용하든 안하든 go언어에서는 break가 기본임
 	case 1:
 		fmt.Println("This is odd number", n)
+		fallthrough
+	default:
+		fmt.Println("This is default. by fallthrough")
+	}
+}
+
+/*
+const 열거값과 Switch
+*/
+type ColorType int
+
+const (
+	Red ColorType = iota
+	Blue
+	Green
+	Yellow
+)
+
+func colorToString(color ColorType) string {
+	switch color {
+	case Red:
+		return "Red"
+	case Blue:
+		return "Blue"
+	case Green:
+		return "Green"
+	case Yellow:
+		return "Yellow"
+	default:
+		return "undefined"
 	}
 }
