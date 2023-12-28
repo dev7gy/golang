@@ -17,10 +17,9 @@ func main() {
 }
 
 func OddEvenCheckerUsingIf(n int) {
-	if test := 11; n == 0 {
-		fmt.Println("초기문", test) // 초기문이 true일 때 수행됨
+	if c := n; c == 0 { // 초기문이 true일 때 수행됨
 		fmt.Println("This is Zero")
-	} else if n%2 == 0 {
+	} else if c%2 == 0 {
 		fmt.Println("This is even number", n)
 	} else {
 		fmt.Println("This is odd number", n)
